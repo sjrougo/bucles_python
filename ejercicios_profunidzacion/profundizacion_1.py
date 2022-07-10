@@ -28,7 +28,21 @@ print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
 # inicio = ....
+inicio = int(input(print("Ingrese un nro que será el inicio de la secuencia numérica: \n")))
 # fin = ....
+fin = int(input(print("Ingrese otro nro que será el fin de la secuencia numérica: \n")))
+cantidad_numeros = 0
+sumatoria = 0
+promedio = 0
+
+for indice in range (inicio, fin + 1):
+    cantidad_numeros += 1
+    sumatoria += indice
+
+promedio = sumatoria / cantidad_numeros
+
+print("El promedio de los números ingresados es: ", promedio)
+
 
 # cantidad_numeros ....
 # sumatoria ....

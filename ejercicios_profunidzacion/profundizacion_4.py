@@ -50,12 +50,26 @@ temperatura_promedio = 0    # Al finalizar el loop deberá aquí alamcenar el pr
 temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la lista
 
 # Colocar el bucle aqui......
+temperatura_max = temp_dataloger [0] #Aquí inicializo la temperatura max y min con el primer valor de la lista temp_dataloger
+temperatura_min = temp_dataloger[0]
+for i in temp_dataloger:
+    if temperatura_max < i: # En cada iteración consulta si la temp max es menor a i (valor actual de la lista)
+        temperatura_max = i # y también si la minima es mayor que i, de ser así, estas variables reemplazan su valor por el de i
+    if temperatura_min > i: # claramente si entra en uno de los if, no ingresará al siguiente
+        temperatura_min = i
+    temperatura_sumatoria += i # Luego realiza una sumatoria de las temp, para posteriormente realizar un promedio
 
+temperatura_len = len(temp_dataloger)
+temperatura_promedio = temperatura_sumatoria / temperatura_len
+print("La temperatura máxima es {}. La mínima es {}. Y el promedio es {:.2f}".format(temperatura_max, temperatura_min, temperatura_promedio))
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
 # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
+print("Prueba de calidad!")
+print("La temp max es {}; la min es {}".format(max(temp_dataloger), min(temp_dataloger)))
+print("La sumatoria es: {}".format(sum(temp_dataloger)))
 
 # Al finalizar el bucle debe calcular el promedio como:
 # temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
@@ -83,3 +97,4 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+print("Basados en las temperaturas máximas y mínimas registradas, podemos decir que nos encontramos en otoño,\nsiendo que ellas son {} y {}, respectivamente".format(temperatura_max, temperatura_min))
